@@ -1,0 +1,15 @@
+
+title {
+  justify-content: center;
+  background-color: ;
+}
+
+
+header li {
+  margin: 0px 40px;
+}
+header ul a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
