@@ -1,0 +1,78 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.containor {
+  max-width: 1300px;
+  width: 100%;
+  margin: auto;
+}
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h2 {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: bold;
+  padding-top: 2em;
+}
+h1 {
+  text-align: center;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card {
+  flex: 0 0 calc(48.33% - 40px);
+  max-width: calc(48.33% - 40px);
+  width: 100%;
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: .3s;
+  border: 2px solid transparent;
+}
+h3{
+    font-family: cursive;
+    text-align: center;
+}
+span{
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.img{
+    display: flex;
+    justify-content: center;
+    padding-left: 8em;
+}
+.btn{
+    margin-left: 2em;
+}
+
+.hover02 figure img {
+	width: 400px;
+	height: auto;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover02 figure:hover img {
+	width: 450px;
+}

@@ -1,73 +1,53 @@
 import React from "react";
-import { Container, Card, Col, Row, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import classes from "./Product.module.css";
 
+const productsArr = [
+  {
+    title: "Colors",
+    price: 100,
+    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
+  },
+  {
+    title: "Black and white Colors",
+    price: 50,
+    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
+  },
+  {
+    title: "Yellow and Black Colors",
+    price: 70,
+    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
+  },
+  {
+    title: "Blue Color",
+    price: 100,
+    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
+  },
+];
 const Product = () => {
   return (
     <>
-      <Container className="mt-3">
-        <Row>
-          <Col>
-            <Card className="shadow-lg">
-              <Card.Header className="p-3">
-                <h4>Black and white Colors</h4>
-              </Card.Header>
-              <Card.Body>
-                <img src="https://prasadyash2411.github.io/ecom-website/img/Album%202.png"></img>
-              </Card.Body>
-              <Card.Footer>
-                <span>$100</span>
-                <Button >Add Cart</Button>
-              </Card.Footer>
-            </Card>
-          </Col>
-          <Col>
-            <Card className="shadow-lg">
-              <Card.Header className="p-3">
-                <h4>Colors</h4>
-              </Card.Header>
-              <Card.Body>
-                <img src="https://prasadyash2411.github.io/ecom-website/img/Album%201.png"></img>
-              </Card.Body>
-              <Card.Footer>
-                <span>$100</span>
-                <Button >Add Cart</Button>
-              </Card.Footer>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-      <Container className="mt-3">
-        <Row>
-          <Col>
-            <Card className="shadow-lg">
-              <Card.Header className="p-3">
-                <h4>Yellow and Black Colors</h4>
-              </Card.Header>
-              <Card.Body>
-                <img src="https://prasadyash2411.github.io/ecom-website/img/Album%203.png"></img>
-              </Card.Body>
-              <Card.Footer>
-                <span>$100</span>
-                <Button >Add Cart</Button>
-              </Card.Footer>
-            </Card>
-          </Col>
-          <Col>
-            <Card className="shadow-lg">
-              <Card.Header className="p-3">
-                <h4>Blue Color</h4>
-              </Card.Header>
-              <Card.Body>
-                <img src="https://prasadyash2411.github.io/ecom-website/img/Album%204.png"></img>
-              </Card.Body>
-              <Card.Footer>
-                <span>$100</span>
-                <Button >Add Cart</Button>
-              </Card.Footer>>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+      <section>
+        <div className={classes.containor}>
+          <h2>MUSIC</h2>
+          <div className={classes.cards}>
+            {productsArr.map((music, i) => (
+              <div key={i} className={classes.card}>
+                <h3>{music.title}</h3>
+                <div className={classes.hover02}>
+                  <figure>
+                    <img className={classes.img} src={music.imageUrl}></img>
+                  </figure>
+                </div>
+                <span>
+                  {`$${music.price}`}
+                  <Button className={classes.btn}>Add to CART</Button>
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 };
