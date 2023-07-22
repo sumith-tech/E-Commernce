@@ -1,9 +1,9 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Header from "./Components/Layouts/Header";
 import Product from "./Components/Products/Product";
 import Cart from "./Components/Cart/Cart";
+import CartProvider from "./Store/CartProvider";
 const App = () => {
-
   const [showCart, setShowcart] = useState(false);
 
   const showCartHandler = () => {
@@ -12,12 +12,13 @@ const App = () => {
   const closeCartHandler = () => {
     setShowcart(false);
   };
-  return <div>
-    {showCart && <Cart onClose={closeCartHandler}/>}
-    <Header onclick={showCartHandler}/>
-    <Product/>
-  </div>
- 
+  return (
+    <CartProvider>
+      {showCart && <Cart onClose={closeCartHandler} />}
+      <Header onclick={showCartHandler} />
+      <Product />
+    </CartProvider>
+  );
 };
 
 export default App;

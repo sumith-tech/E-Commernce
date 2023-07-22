@@ -14,3 +14,9 @@ header ul a {
   text-decoration: none;
   cursor: pointer;
 }
+.Button{
+  padding-right: 5em;
+}
+.toplist{
+  justify-content: center;
+}

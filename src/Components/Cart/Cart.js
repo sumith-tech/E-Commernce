@@ -1,44 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import CartItems from "./CartItems";
 import classes from "./Cart.module.css";
 import Modal from "../UI/Modal";
+import CartContext from "../../Store/cart-context";
+import { Button, Row, Table } from "react-bootstrap";
 const Cart = (props) => {
-  const CartElements = [
-    {
-      title: "Colors",
-      price: 100,
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-      quantity: 2,
-    },
-    {
-      title: "Black and white Colors",
-      price: 50,
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-      quantity: 3,
-    },
-    {
-      title: "Yellow and Black Colors",
-      price: 70,
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-      quantity: 1,
-    },
-  ];
+  const cartctx = useContext(CartContext);
+  const hasitem = cartctx.items.length > 0;
+  let totalamount = 0;
+  cartctx.items.forEach((item) => {
+    totalamount += Number(item.quantity) * item.price;
+  });
 
-  const CartItem =  CartElements.map((item, i) => (
-        <CartItems
-          key={i}
-          title={item.title}
-          price={item.price}
-          imageUrl={item.imageUrl}
-          quantity={item.quantity}
-        />
-      ))
-    
+  const CartItem = cartctx.items.map((item, i) => (
+    <CartItems
+      key={i}
+      id={item.id}
+      title={item.title}
+      price={item.price}
+      imageUrl={item.imageUrl}
+      quantity={item.quantity}
+    />
+  ));
 
-  console.log(CartItem);
   return (
     <Modal>
       <div className={classes.Cart}>
@@ -47,15 +31,21 @@ const Cart = (props) => {
           <button onClick={props.onClose} className={classes.btn}>
             X
           </button>
-          <table>
-          <tr className={classes.row}>
-            <th className={classes.item}>ITEM</th>
-            <th className={classes.price}>PRICE</th>
-            <th className={classes.qty}>QUANTITY</th>
-          </tr>
-          {CartItem}
-          </table>
-          
+          <Table>
+            <tr className={classes.row}>
+              <th className={classes.item}>ITEM</th>
+              <th className={classes.price}>PRICE</th>
+              <th className={classes.qty}>QUANTITY</th>
+            </tr>
+            <tbody>{CartItem}</tbody>
+          </Table>
+          <div className={classes.total}>
+            <span>Total Amount</span>
+            <span>${totalamount}</span>
+          </div>
+          <div className={classes.actions}>
+            {hasitem && <Button>Purchase</Button>}
+          </div>
         </section>
       </div>
     </Modal>

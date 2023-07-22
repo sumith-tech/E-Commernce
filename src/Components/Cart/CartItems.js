@@ -1,15 +1,21 @@
-import React from "react";
+import React,{useContext} from "react";
 import { Button, Row, Col } from "react-bootstrap";
 import classes from "./CartItem.module.css";
+import CartContext from "../../Store/cart-context";
 const CartItems = (props) => {
   console.log(props.title);
+  const cartctx=useContext(CartContext);
+  const onremoveHandler = (event) => {
+    cartctx.removeItem(props.id)
+  };
+
   return (
-    <tr>
+    <tr key={props.i}>
       <Row>
         <Col>
           <div>
             <img className={classes.image} src={props.imageUrl}></img>
-            <h4>{props.title}</h4>
+            <span style={{padding:'0px'}}>{props.title}</span>
           </div>
         </Col>
         <Col>
@@ -19,7 +25,9 @@ const CartItems = (props) => {
           <span className={classes.quantity}>{props.quantity}</span>
         </Col>
         <Col>
-          <Button variant="danger">REMOVE</Button>
+          <Button onClick={onremoveHandler} variant="danger">
+            REMOVE
+          </Button>
         </Col>
       </Row>
     </tr>

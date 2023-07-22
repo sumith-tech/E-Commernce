@@ -2,11 +2,13 @@
     display: flex;
 }
 .item{
-    
-    margin-right: 6em;
+    padding-left: 2em;
+}
+.price{
+    padding-left: 8em;
 }
 .qty{
-    margin-left: 4em;
+    padding-left: 6em;
 }
 .btn{
     position: absolute;
