@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import { Container, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartContext from "../../Store/cart-context";
+import About from "../AboutPage/About";
 const Header = (props) => {
   const cartctx = useContext(CartContext);
   let numberOfCartitems = 0;
@@ -20,11 +21,11 @@ const Header = (props) => {
         variant="dark"
         className="justify-content-center"
       >
-        <Navbar.Brand href="#">HOME</Navbar.Brand>
-        <Navbar.Brand href="#">STORE</Navbar.Brand>
-        <Navbar.Brand href="#">ABOUT</Navbar.Brand>
-        <Button onClick={props.onclick} className={Button} variant="secondary">
-          CART<span style={{ paddingTop: "0px" }}>{numberOfCartitems}</span>
+        <Navbar.Brand  >HOME</Navbar.Brand>
+        <Navbar.Brand style={{ paddingLeft: "35px",paddingRight:"35px",justifyContent:'center'}} href={'/'}>STORE</Navbar.Brand>
+        <Navbar.Brand   href={'../AboutPage/About'}>ABOUT</Navbar.Brand>
+        <Button onClick={props.onclick} className={Button} variant="secondary" style={{ position: 'absolute',top:'0',right:'0',margin:'20px' }}>
+          CART<span style={{ paddingTop: "0px",}}>{numberOfCartitems}</span>
         </Button>{" "}
       </Navbar>
       <Container fluid className="bg-danger">

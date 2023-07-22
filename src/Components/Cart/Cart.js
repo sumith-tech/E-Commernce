@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import CartItems from "./CartItems";
-import classes from "./Cart.module.css";
+import CartItems from './CartItems'
+import classes from './Cart.module.css'
 import Modal from "../UI/Modal";
 import CartContext from "../../Store/cart-context";
 import { Button, Row, Table } from "react-bootstrap";

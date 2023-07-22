@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.image{
+
+    float: left;
+    margin: 20px 50px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+.about {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 22px;
+}
+div {
+    display: block;
+}
