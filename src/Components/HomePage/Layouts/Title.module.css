@@ -1,0 +1,52 @@
+.title {
+    justify-content: center;
+   padding: 2em ;
+   padding-top: 5em;
+  }
+  header h1{
+    padding: 40px;
+    font-size: 100px;
+    display: block;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 3px 3px 4px black;
+  }
+  header li {
+    margin: 0px 40px;
+  }
+  header ul a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .Button{
+    padding-right: 5em;
+  }
+  .toplist{
+    justify-content: center;
+  }
+
+ .album {
+    display: block;
+    border: 1px solid #2c3132c2;
+    padding: 15px 30px;
+    font-size: 23px;
+    font-weight: 200;
+    margin: 10px auto;
+    background: inherit;
+    cursor: pointer;
+    color: #000000a6;
+}
+.play{
+    cursor: pointer;
+    display: block;
+    border: 2px solid #2c3132c2;
+    border-radius: 50%;
+    padding: 12px 20px;
+    font-size: 30px;
+    font-weight: 200;
+    margin: 20px auto;
+    background: inherit;
+    color: #000000a6;
+    appearance: auto;
+}
