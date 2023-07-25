@@ -6,6 +6,7 @@
 .table tr td{
     justify-content: center;
     padding-left: 4em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 section h2{
     padding-bottom: 3em;

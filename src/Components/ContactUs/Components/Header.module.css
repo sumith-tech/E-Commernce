@@ -1,0 +1,15 @@
+.title {
+    justify-content: center;
+   padding: 2em ;
+   padding-top: 5em;
+  }
+  header h1{
+    padding: 40px;
+    font-size: 100px;
+    display: block;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 3px 3px 4px black;
+  }
+
+ 

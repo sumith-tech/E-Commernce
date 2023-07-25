@@ -21,11 +21,31 @@ const Header = (props) => {
         variant="dark"
         className="justify-content-center"
       >
-        <Navbar.Brand href={'../HomePage/Home'} >HOME</Navbar.Brand>
-        <Navbar.Brand style={{ paddingLeft: "35px",paddingRight:"35px",justifyContent:'center'}} href={'/'}>STORE</Navbar.Brand>
-        <Navbar.Brand   href={'../AboutPage/About'}>ABOUT</Navbar.Brand>
-        <Button onClick={props.onclick} className={Button} variant="secondary" style={{ position: 'absolute',top:'0',right:'0',margin:'20px' }}>
-          CART<span style={{ paddingTop: "0px",}}>{numberOfCartitems}</span>
+        <Navbar.Brand href={"../HomePage/Home"}>HOME</Navbar.Brand>
+        <Navbar.Brand
+          style={{
+            paddingLeft: "35px",
+            paddingRight: "35px",
+            justifyContent: "center",
+          }}
+          href={"/"}
+        >
+          STORE
+        </Navbar.Brand>
+        <Navbar.Brand href={"../AboutPage/About"}>ABOUT</Navbar.Brand>
+        <Navbar.Brand
+          style={{ paddingLeft: "35px", justifyContent: "center" }}
+          href={"../ContactUs/Contactus"}
+        >
+          CONTACT US
+        </Navbar.Brand>
+        <Button
+          onClick={props.onclick}
+          className={Button}
+          variant="secondary"
+          style={{ position: "absolute", top: "0", right: "0", margin: "20px" }}
+        >
+          CART<span style={{ paddingTop: "0px" }}>{numberOfCartitems}</span>
         </Button>{" "}
       </Navbar>
       <Container fluid className="bg-danger">

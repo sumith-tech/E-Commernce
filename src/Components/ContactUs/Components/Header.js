@@ -1,7 +1,7 @@
 import React from "react";
-import { Navbar } from "react-bootstrap";
+import { Navbar,Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Title from "./Title";
+import classes from './Header.module.css'
 const Header = (props) => {
   return (
     <header>
@@ -31,7 +31,11 @@ const Header = (props) => {
           CONTACT US
         </Navbar.Brand>
       </Navbar>
-      <Title />
+      <Container fluid className="bg-danger">
+        <Container className={classes.title}>
+          <h1>The Generics</h1>
+        </Container>
+      </Container>
     </header>
   );
 };
