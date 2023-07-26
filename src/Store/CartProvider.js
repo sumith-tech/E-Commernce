@@ -3,6 +3,7 @@ import CartContext from "./cart-context";
 
 const CartProvider = (props) => {
   const [items, setItems] = useState([]);
+  const [product, setProduct] = useState([]);
 
   const additemhandler = (item) => {
     const existingCartItemIndex = items.findIndex(
@@ -45,15 +46,24 @@ const CartProvider = (props) => {
     }
   };
 
+  const showProductHandler=(product)=>{
+    setProduct(product)
+
+    
+  }
+
   const cartcontext = {
     items: items,
     totalamount: 0,
     addItem: additemhandler,
     removeItem: removeItemHandler,
+    product: product,
+    showProduct:showProductHandler,
   };
-
+ 
   return (
-    <CartContext.Provider value={cartcontext}>
+    <CartContext.Provider  value={cartcontext}>
+      {console.log(product)}
       {props.children}
     </CartContext.Provider>
   );
