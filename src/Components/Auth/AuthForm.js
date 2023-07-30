@@ -8,8 +8,8 @@ const AuthForm = () => {
   const navigate = useNavigate();
   const authctx = useContext(CartContext);
 
-  const item= authctx.items
-  console.log(item)
+  const item = authctx.items;
+  console.log(item);
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -42,9 +42,8 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        navigate("/");
         authctx.login(data.idToken);
-        console.log(data.idToken);
+        navigate.push("/loginstore");
       })
       .catch((err) => {});
   };

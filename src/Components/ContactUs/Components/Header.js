@@ -19,7 +19,7 @@ const Header = (props) => {
             paddingRight: "35px",
             justifyContent: "center",
           }}
-          href={"/"}
+          href={"/store"}
         >
           STORE
         </Navbar.Brand>
