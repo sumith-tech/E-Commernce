@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 import Title from "./Title";
 const Header = (props) => {
   return (
@@ -29,6 +30,17 @@ const Header = (props) => {
           href={"../ContactUs/Contactus"}
         >
           CONTACT US
+        </Navbar.Brand>
+
+        <Navbar.Brand
+          href={"../Auth/AuthMain"}
+          style={{
+            paddingLeft: "35px",
+            color: "white",
+            textDecoration: "none",
+          }}
+        >
+          LOGIN
         </Navbar.Brand>
       </Navbar>
       <Title />

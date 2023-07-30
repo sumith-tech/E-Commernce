@@ -4,6 +4,7 @@ import CartContext from "./cart-context";
 const CartProvider = (props) => {
   const [items, setItems] = useState([]);
   const [product, setProduct] = useState([]);
+  const [token, setToken] = useState(null);
 
   const additemhandler = (item) => {
     const existingCartItemIndex = items.findIndex(
@@ -46,11 +47,14 @@ const CartProvider = (props) => {
     }
   };
 
-  const showProductHandler=(product)=>{
-    setProduct(product)
-
-    
-  }
+  const showProductHandler = (product) => {
+    setProduct(product);
+  };
+  const saveTokenHandler = (token) => {
+    console.log(token)
+    setToken(token);
+    localStorage.setItem('token',token)
+  };
 
   const cartcontext = {
     items: items,
@@ -58,12 +62,14 @@ const CartProvider = (props) => {
     addItem: additemhandler,
     removeItem: removeItemHandler,
     product: product,
-    showProduct:showProductHandler,
+    showProduct: showProductHandler,
+    token: token,
+    login: saveTokenHandler,
   };
- 
+
   return (
-    <CartContext.Provider  value={cartcontext}>
-      {console.log(product)}
+    <CartContext.Provider value={cartcontext}>
+      {console.log(cartcontext.token)}
       {props.children}
     </CartContext.Provider>
   );

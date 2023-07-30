@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import { Container, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartContext from "../../Store/cart-context";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   const cartctx = useContext(CartContext);
