@@ -3,10 +3,10 @@ import { Button, Row, Col } from "react-bootstrap";
 import classes from "./CartItem.module.css";
 import CartContext from "../../Store/cart-context";
 const CartItems = (props) => {
-  console.log(props.title);
+  console.log(props.imageUrl);
   const cartctx=useContext(CartContext);
   const onremoveHandler = (event) => {
-    cartctx.removeItem(props.id)
+    cartctx.removeItem(props.dltid)
   };
 
   return (

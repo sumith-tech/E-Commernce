@@ -11,16 +11,19 @@ const Cart = (props) => {
   cartctx.items.forEach((item) => {
     totalamount += Number(item.quantity) * item.price;
   });
+  
 
   const CartItem = cartctx.items.map((item, i) => (
     <CartItems
       key={i}
+      dltid={item.dltid}
       id={item.id}
       title={item.title}
       price={item.price}
       imageUrl={item.imageUrl}
       quantity={item.quantity}
     />
+    
   ));
 
   return (

@@ -4,7 +4,6 @@ import Product from "./Product";
 import CartProvider from "../../Store/CartProvider";
 import Cart from "../Cart/Cart";
 
-
 const StorePage = () => {
   const [showCart, setShowcart] = useState(false);
 
@@ -14,6 +13,7 @@ const StorePage = () => {
   const closeCartHandler = () => {
     setShowcart(false);
   };
+  
   return (
     <CartProvider>
       {showCart && <Cart onClose={closeCartHandler} />}

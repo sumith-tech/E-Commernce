@@ -42,8 +42,8 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        authctx.login(data.idToken);
-        navigate.push("/loginstore");
+        authctx.login(data.idToken,emailInp);
+        navigate("/loginstore");
       })
       .catch((err) => {});
   };

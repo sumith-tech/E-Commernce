@@ -1,9 +1,15 @@
-import React from "react";
-import { Navbar } from "react-bootstrap";
+import React, { useContext } from "react";
+import { Button, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import Title from "./Title";
+import CartContext from "../../../Store/cart-context";
 const Header = (props) => {
+  const cartCtx = useContext(CartContext);
+
+  const logoutHandler=()=>{
+    cartCtx.logout();
+  }
   return (
     <header>
       <Navbar
@@ -13,7 +19,7 @@ const Header = (props) => {
         variant="dark"
         className="justify-content-center"
       >
-        <Navbar.Brand href={"../HomePage/Home"}>HOME</Navbar.Brand>
+        <Navbar.Brand href={"/"}>HOME</Navbar.Brand>
         <Navbar.Brand
           style={{
             paddingLeft: "35px",
@@ -32,16 +38,19 @@ const Header = (props) => {
           CONTACT US
         </Navbar.Brand>
 
-        <Navbar.Brand
-          href={"../Auth/AuthMain"}
-          style={{
-            paddingLeft: "35px",
-            color: "white",
-            textDecoration: "none",
-          }}
-        >
-          LOGIN
-        </Navbar.Brand>
+        {!cartCtx.islogin && (
+          <Navbar.Brand
+            href={"../Auth/AuthMain"}
+            style={{
+              paddingLeft: "35px",
+              color: "white",
+              textDecoration: "none",
+            }}
+          >
+            login
+          </Navbar.Brand>
+        )}
+        {cartCtx.islogin && <Button onClick={logoutHandler}>Logout</Button>}
       </Navbar>
       <Title />
     </header>

@@ -22,7 +22,7 @@ const Header = (props) => {
         variant="dark"
         className="justify-content-center"
       >
-        <Navbar.Brand href={"../HomePage/Home"}>HOME</Navbar.Brand>
+        <Navbar.Brand href={"/"}>HOME</Navbar.Brand>
         <Navbar.Brand
           style={{
             paddingLeft: "35px",

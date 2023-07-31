@@ -20,7 +20,7 @@ const App = () => {
       {!contxtCtx.islogin && <Route path="/store" element={<AuthMain />} />}
       <Route path="/loginstore" element={<StorePage />} />
       <Route path="/AboutPage/About" element={<About />} />
-      <Route path="/Homepage/Home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/ContactUs/Contactus" element={<Contactus />} />
       <Route path="/Auth/AuthMain" element={<AuthMain />} />
       <Route
