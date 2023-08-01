@@ -22,7 +22,8 @@ const ContactForm = (props) => {
 
   return (
     <Card>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className="form-control">
+        <h3>Contact Us</h3>
         <div className={classes.control}>
           <label htmlFor="name">Name</label>
           <input type="text" id="name" ref={nameRef} />
@@ -35,7 +36,8 @@ const ContactForm = (props) => {
           <label htmlFor="date">PH Number</label>
           <input type="number" id="number" ref={phoneRef} />
         </div>
-        <button>Send Query</button>
+       
+<button class={classes.button} role="button">Send Query</button>
       </form>
     </Card>
   );

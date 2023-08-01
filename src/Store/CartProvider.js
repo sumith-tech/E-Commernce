@@ -19,7 +19,7 @@ const CartProvider = (props) => {
   }, []);
   const updatedItemsToCart = () => {
     axios
-      .get(`https://crudcrud.com/api/06eb365e11a64728baba28a6390d5eef/${email}`)
+      .get(`https://crudcrud.com/api/e8010481fbfc46fe8da5af9d4ad6a0c6/${email}`)
       .then((res) => {
         let finalObj = [];
         for (let i = 0; i < res.data.length; i++) {
@@ -39,7 +39,7 @@ const CartProvider = (props) => {
   };
   const getitemid = () =>
     axios
-      .get(`https://crudcrud.com/api/06eb365e11a64728baba28a6390d5eef/${email}`)
+      .get(`https://crudcrud.com/api/e8010481fbfc46fe8da5af9d4ad6a0c6/${email}`)
       .then((res) => {
         let idarr = [];
         for (let i = 0; i < res.data.length; i++) {
@@ -70,7 +70,7 @@ const CartProvider = (props) => {
       const newitem = updatedItem;
       const putitem = axios
         .put(
-          `https://crudcrud.com/api/06eb365e11a64728baba28a6390d5eef/${email}/${itemsId[existingCartItemIndex]}`,
+          `https://crudcrud.com/api/e8010481fbfc46fe8da5af9d4ad6a0c6/${email}/${itemsId[existingCartItemIndex]}`,
           { newitem }
         )
         .then((res) => {});
@@ -84,7 +84,7 @@ const CartProvider = (props) => {
       const newitem = item;
       axios
         .post(
-          `https://crudcrud.com/api/06eb365e11a64728baba28a6390d5eef/${email}`,
+          `https://crudcrud.com/api/e8010481fbfc46fe8da5af9d4ad6a0c6/${email}`,
           { newitem }
         )
         .then((res) => {
@@ -119,7 +119,7 @@ const CartProvider = (props) => {
     console.log(id);
     axios
       .delete(
-        `https://crudcrud.com/api/06eb365e11a64728baba28a6390d5eef/${email}/${id}`
+        `https://crudcrud.com/api/e8010481fbfc46fe8da5af9d4ad6a0c6/${email}/${id}`
       )
       .then((res) => {
         updatedItemsToCart();

@@ -1,0 +1,17 @@
+.footertitle {
+    
+    text-align: left;
+    color: white;
+    width: 50%;
+    font-size: 50px;
+    margin: 0 auto;
+    justify-content: center;
+    display: block;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.copyright{
+    color:rgb(153, 152, 150);
+    font-size: 12px;
+    padding-right: 3em;
+}
